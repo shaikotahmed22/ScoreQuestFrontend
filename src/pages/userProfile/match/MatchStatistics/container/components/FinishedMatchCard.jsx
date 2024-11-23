@@ -41,8 +41,11 @@ const FinishedMatchCard = ({ match, parentClass }) => {
           <span className="font-semibold">
             {parseInt(match?.score?.requestedTeam?.totalRuns) <
             parseInt(match?.score?.requestingTeam?.totalRuns)
-              ? match?.teams?.requestingTeam?.name + " wine the match"
-              : match?.teams?.requestedTeam?.name + " wine the match"}
+              ? match?.teams?.requestingTeam?.name + " win the match"
+              : parseInt(match?.score?.requestedTeam?.totalRuns) >
+                parseInt(match?.score?.requestingTeam?.totalRuns)
+              ? match?.teams?.requestedTeam?.name + " win the match"
+              : "Match Draw"}
           </span>
         </div>
       </div>
